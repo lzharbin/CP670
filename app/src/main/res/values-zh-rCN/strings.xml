@@ -2,5 +2,9 @@
 <resources>
     <string name="app_name">Assignment 1</string>
     <string name="hello_message">你好!</string>
-    <string name="ButtonText">I\'m a button</string>
+    <string name="ButtonText">我是按钮</string>
+    <string name="login_text">登录</string>
+    <string name="password_text">密码</string>
+    <string name="radio_button_text">单选按钮</string>
+    <string name="check_box_text">选择框</string>
 </resources>
