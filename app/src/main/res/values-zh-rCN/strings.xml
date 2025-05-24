@@ -7,4 +7,12 @@
     <string name="password_text">密码</string>
     <string name="radio_button_text">单选按钮</string>
     <string name="check_box_text">选择框</string>
+    <string name="dialog_message">你想退出这个活动吗？</string>
+    <string name="dialog_title">确认</string>
+    <string name="ok">是</string>
+    <string name="cancel">否</string>
+    <string name="toast_result_prefix">从列表活动返回的信息： </string>
+    <string name="log_on_create">进入onCreate</string>
+    <string name="response_message">这是我的回复</string>
+
 </resources>

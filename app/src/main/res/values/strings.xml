@@ -6,4 +6,12 @@
     <string name="password_text">password</string>
     <string name="radio_button_text">Radio Button</string>
     <string name="check_box_text">Check Box</string>
+    <string name="dialog_message">Do you want to finish the activity?</string>
+    <string name="dialog_title">Confirm</string>
+    <string name="ok">Yes</string>
+    <string name="cancel">No</string>
+    <string name="toast_result_prefix">ListItemsActivity passed: </string>
+    <string name="log_on_create">inside onCreate</string>
+    <string name="response_message">Here is my response</string>
+
 </resources>
