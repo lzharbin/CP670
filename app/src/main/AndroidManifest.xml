@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.androidassignment">
@@ -9,8 +10,8 @@
 
     <!-- Permissions -->
     <uses-permission android:name="android.permission.CAMERA" />
-    <!-- WRITE_EXTERNAL_STORAGE only needed for Android 9 and below -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
 
     <application
@@ -24,17 +25,43 @@
         android:theme="@style/Theme.AndroidAssignment"
         tools:targetApi="31">
 
-        <!-- Your activities -->
-        <activity android:name=".ListItemsActivity" android:exported="false" />
-        <activity android:name=".MainActivity" android:exported="false" />
-        <activity android:name=".LoginActivity" android:exported="true">
+        <!-- Declare support for parent-child navigation -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".LoginActivity" />
+
+        <!-- ChatWindow activity -->
+        <activity
+            android:name=".ChatWindow"
+            android:exported="false"
+            android:label="@string/label_back"
+            android:parentActivityName=".LoginActivity" />
+
+        <!-- ListItems activity -->
+        <activity
+            android:name=".ListItemsActivity"
+            android:exported="false"
+            android:label="@string/label_back"
+            android:parentActivityName=".LoginActivity" />
+
+        <!-- Main activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/label_back"
+            android:parentActivityName=".LoginActivity" />
+
+        <!-- Login activity (launcher) -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- FileProvider: Required for image URI sharing -->
+        <!-- FileProvider for sharing image URI -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.androidassignment.fileprovider"

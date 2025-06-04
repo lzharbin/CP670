@@ -34,7 +34,6 @@ android {
         jvmTarget = "11"
     }
 }
-
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -43,7 +42,11 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.exifinterface)
+
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation("androidx.test:core:1.5.0")
+    androidTestImplementation("androidx.test:rules:1.5.0")
 }

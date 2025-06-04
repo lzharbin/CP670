@@ -3,7 +3,6 @@ package com.example.androidassignment;
 import android.Manifest;
 import android.app.Activity;
 import android.content.ComponentName;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -45,8 +44,11 @@ public class ListItemsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+//        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_list_items);
+
+        // Show back arrow in the ActionBar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -63,7 +65,6 @@ public class ListItemsActivity extends AppCompatActivity {
             finish();
         });
 
-        // Switch
         Switch mySwitch = findViewById(R.id.mySwitch);
         mySwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             CharSequence text = isChecked ? "Switch is On" : "Switch is Off";
@@ -71,7 +72,6 @@ public class ListItemsActivity extends AppCompatActivity {
             print(text.toString(), duration);
         });
 
-        // CheckBox with dialog
         CheckBox myCheckBox = findViewById(R.id.myCheckBox);
         myCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
@@ -82,12 +82,10 @@ public class ListItemsActivity extends AppCompatActivity {
                             Intent resultIntent = new Intent();
                             String responseMessage = getString(R.string.response_message);
                             resultIntent.putExtra("Response", responseMessage);
-
                             setResult(Activity.RESULT_OK, resultIntent);
                             finish();
                         })
                         .setNegativeButton(R.string.cancel, (dialog, id) -> {
-                            // Do nothing
                         })
                         .show();
             }
@@ -129,9 +127,15 @@ public class ListItemsActivity extends AppCompatActivity {
         }
     }
 
+    // Handle ActionBar back button click
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
+
     private void print(String message, int duration) {
-        Toast toast = Toast.makeText(this, message, duration);
-        toast.show();
+        Toast.makeText(this, message, duration).show();
     }
 
     private void checkCameraPermission() {
@@ -146,17 +150,10 @@ public class ListItemsActivity extends AppCompatActivity {
 
     private void launchCamera() {
         File imageFile = new File(getExternalFilesDir(null), "photo.jpg");
-        photoUri = FileProvider.getUriForFile(
-                this,
-                getPackageName() + ".fileprovider",
-                imageFile
-        );
+        photoUri = FileProvider.getUriForFile(this, getPackageName() + ".fileprovider", imageFile);
 
         Intent intent = new Intent();
-        intent.setComponent(new ComponentName(
-                "net.sourceforge.opencamera",
-                "net.sourceforge.opencamera.MainActivity"
-        ));
+        intent.setComponent(new ComponentName("net.sourceforge.opencamera", "net.sourceforge.opencamera.MainActivity"));
         intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
         intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <!-- Left-side text -->
+    <TextView
+        android:id="@+id/message_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Incoming message"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:gravity="right" />
+
+    <!-- Right-side image -->
+    <ImageView
+        android:id="@+id/message_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/sym_call_incoming"
+        android:contentDescription="Incoming Icon"
+        android:layout_marginStart="8dp" />
+</LinearLayout>

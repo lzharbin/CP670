@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context=".LoginActivity"
     android:padding="16dp">
@@ -12,29 +13,33 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login_text" />
+        android:text="@string/login_text"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp" />
 
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="login name"
-        android:inputType="textEmailAddress" />
-
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/password_text" />
+        android:text="@string/password_text"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp" />
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:hint="password" />
+        android:hint="password"
+        android:layout_marginBottom="24dp" />
 
-    <!-- 👇 Login Button -->
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"

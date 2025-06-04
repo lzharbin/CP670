@@ -40,4 +40,15 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="32dp" />
 
+    <Button
+        android:id="@+id/buttonStartChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_chat"
+        app:layout_constraintTop_toBottomOf="@id/button"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,10 +24,8 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // Reference to the button
+        // Reference to the List Items button
         Button buttonListItems = findViewById(R.id.buttonListItems);
-
-        // Click handler to launch ListItemsActivity
         buttonListItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,14 +34,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Apply window insets
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-        Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-        v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-        return insets;
-    });
-        Log.i(ACTIVITY_NAME, getString(R.string.log_on_create));
+        // Reference to the Start Chat button
+        Button buttonStartChat = findViewById(R.id.buttonStartChat);
+        buttonStartChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(ACTIVITY_NAME, "User clicked Start Chat");
+                Intent intent = new Intent(MainActivity.this, ChatWindow.class);
+                startActivity(intent);
+            }
+        });
 
+        // Handle window insets
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+        Log.i(ACTIVITY_NAME, getString(R.string.log_on_create));
     }
 
     @Override
@@ -58,12 +67,10 @@ public class MainActivity extends AppCompatActivity {
                     String prefix = getString(R.string.toast_result_prefix);
                     String displayMessage = prefix + messagePassed;
                     Toast.makeText(this, displayMessage, Toast.LENGTH_SHORT).show();
-
                 }
             }
         }
     }
-
 
     @Override
     protected void onStart() {

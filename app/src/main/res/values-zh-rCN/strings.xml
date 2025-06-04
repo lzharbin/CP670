@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Assignment 1</string>
+    <string name="app_name">应用程序</string>
     <string name="hello_message">你好!</string>
     <string name="ButtonText">我是按钮</string>
     <string name="login_text">登录</string>
@@ -14,5 +14,8 @@
     <string name="toast_result_prefix">从列表活动返回的信息： </string>
     <string name="log_on_create">进入onCreate</string>
     <string name="response_message">这是我的回复</string>
+    <string name="start_chat">开始聊天</string>
+    <string name="button_send">发送</string>
+    <string name="label_back">返回上一步</string>
 
 </resources>
