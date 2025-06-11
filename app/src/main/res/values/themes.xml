@@ -1,9 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Base theme that includes ActionBar support -->
+    <!-- Base theme with ActionBar (default for most activities) -->
     <style name="Base.Theme.AndroidAssignment" parent="Theme.AppCompat.Light.DarkActionBar" />
 
-    <!-- Application theme -->
+    <!-- Default application theme -->
     <style name="Theme.AndroidAssignment" parent="Base.Theme.AndroidAssignment" />
+
+    <!-- Base theme without ActionBar (used when you define your own Toolbar) -->
+    <style name="Base.Theme.AndroidAssignment.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <!-- Theme used by TestToolbar activity -->
+    <style name="Theme.AndroidAssignment.NoActionBar" parent="Base.Theme.AndroidAssignment.NoActionBar" />
 
 </resources>

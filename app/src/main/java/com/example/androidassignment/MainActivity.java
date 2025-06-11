@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // Reference to the List Items button
+        // Launch ListItemsActivity
         Button buttonListItems = findViewById(R.id.buttonListItems);
         buttonListItems.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Reference to the Start Chat button
+        // Launch ChatWindow
         Button buttonStartChat = findViewById(R.id.buttonStartChat);
         buttonStartChat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +45,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Handle window insets
+        // Launch TestToolbar
+        Button buttonTestToolbar = findViewById(R.id.buttonTestToolbar);
+        buttonTestToolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TestToolbar.class);
+                startActivity(intent);
+            }
+        });
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);

@@ -25,6 +25,12 @@
         android:theme="@style/Theme.AndroidAssignment"
         tools:targetApi="31">
 
+        <!-- ✅ TestToolbar now uses NoActionBar theme -->
+        <activity
+            android:name=".TestToolbar"
+            android:exported="false"
+            android:theme="@style/Theme.AndroidAssignment.NoActionBar" />
+
         <!-- Declare support for parent-child navigation -->
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
@@ -71,7 +77,5 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
     </application>
-
 </manifest>

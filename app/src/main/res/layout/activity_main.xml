@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Centered Hello Text -->
     <TextView
         android:id="@+id/textHello"
         android:layout_width="wrap_content"
@@ -18,7 +17,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="64dp" />
 
-    <!-- Button that launches ListItemsActivity -->
     <Button
         android:id="@+id/buttonListItems"
         android:layout_width="wrap_content"
@@ -29,7 +27,6 @@
         android:layout_marginTop="32dp"
         android:layout_marginStart="32dp" />
 
-    <!-- Another Button (optional functionality) -->
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -50,5 +47,15 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="32dp" />
 
+    <!-- ✅ New Button: Test Toolbar -->
+    <Button
+        android:id="@+id/buttonTestToolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test Toolbar"
+        app:layout_constraintTop_toBottomOf="@id/buttonStartChat"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

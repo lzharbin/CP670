@@ -17,5 +17,16 @@
     <string name="start_chat">开始聊天</string>
     <string name="button_send">发送</string>
     <string name="label_back">返回上一步</string>
+    <string name="next">下一个</string>
+    <string name="previous">之前的</string>
+    <string name="dialog_title2">你想返回上一步吗?</string>
+    <string name="dialog_yes">是</string>
+    <string name="dialog_cancel">频道</string>
+    <string name="first_fragment_label">第一个片段</string>
+    <string name="second_fragment_label">第二个片段</string>
+    <string name="lorem_ipsum">虚拟文本</string>
+    <string name="custom_dialog_title">Enter your new message</string>
+    <string name="toolbar_ok">好的</string>
+    <string name="toolbar_cancel">取消</string>
 
 </resources>
