@@ -47,6 +47,7 @@ dependencies {
     implementation(libs.androidx.exifinterface)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
+    implementation(libs.espresso.core)
 
     testImplementation(libs.junit)
 
