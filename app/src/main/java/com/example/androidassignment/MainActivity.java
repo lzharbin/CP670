@@ -55,6 +55,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Launch WeatherForecast
+        Button buttonWeatherForecast = findViewById(R.id.buttonWeatherForecast);
+        buttonWeatherForecast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(ACTIVITY_NAME, "User clicked Weather Forecast");
+                Intent intent = new Intent(MainActivity.this, WeatherForecast.class);
+                startActivity(intent);
+            }
+        });
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
