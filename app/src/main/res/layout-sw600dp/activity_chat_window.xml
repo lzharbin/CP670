@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/chatLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <!-- Chat messages on the left (fixed 300dp width) -->
+    <ListView
+        android:id="@+id/chatView"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="#FFFFE0"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <!-- Bottom input and send bar aligned to the left side of ListView -->
+    <LinearLayout
+        android:id="@+id/inputBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@id/chatView"
+        android:layout_alignStart="@id/chatView">
+
+        <EditText
+            android:id="@+id/messageText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Type your message"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_send" />
+    </LinearLayout>
+
+    <!-- Detail FrameLayout to the right of chat area -->
+    <FrameLayout
+        android:id="@+id/detailFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/chatView"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/inputBar"
+        android:layout_marginStart="8dp" />
+</RelativeLayout>

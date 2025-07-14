@@ -1,17 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.androidassignment">
-
     <!-- Camera is optional (good for emulator support) -->
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="false" />
-
-    <!-- Permissions -->
+        android:required="false" /> <!-- Permissions -->
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- ✅ Added for WeatherForecast -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -24,11 +23,12 @@
         android:theme="@style/Theme.AndroidAssignment"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-
+        <activity
+            android:name=".MessageDetails"
+            android:exported="false" />
         <activity
             android:name=".WeatherForecast"
             android:exported="false" />
-
         <activity
             android:name=".TestToolbar"
             android:exported="false"
@@ -43,24 +43,22 @@
             android:exported="false"
             android:label="@string/label_back"
             android:parentActivityName=".LoginActivity" />
-
         <activity
             android:name=".ListItemsActivity"
             android:exported="false"
             android:label="@string/label_back"
             android:parentActivityName=".LoginActivity" />
-
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="@string/label_back"
             android:parentActivityName=".LoginActivity" />
-
         <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -75,5 +73,5 @@
                 android:resource="@xml/file_paths" />
         </provider>
     </application>
-</manifest>
 
+</manifest>
